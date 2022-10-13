@@ -13,13 +13,13 @@ function addBooks () {
     var cell3 = row.insertCell(2);
     var cell4 = row.insertCell(3);
     // Seperate input fields values
-    let input1 = document.getElementById("title").value;
-    let input2 = document.getElementById("author").value;
-    let input3 = document.getElementById("isbn").value;
+    let input1 = document.getElementById("title");
+    let input2 = document.getElementById("author");
+    let input3 = document.getElementById("isbn");
     // Add text to the new cells
-    cell1.innerText = input1;
-    cell2.innerText = input2;
-    cell3.innerText = input3;
+    cell1.innerText = input1.value;
+    cell2.innerText = input2.value;
+    cell3.innerText = input3.value;
     cell4.innerHTML = '<a href="#" id="del">X</a>'
     // Clear the input fields
     input1.value = ''
