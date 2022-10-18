@@ -13,7 +13,7 @@ function addBooks () {
     var cell2 = row.insertCell(1);
     var cell3 = row.insertCell(2);
     var cell4 = row.insertCell(3);
-    // Seperate input fields values
+    // Identify input field values
     let input1 = document.getElementById("title");
     let input2 = document.getElementById("author");
     let input3 = document.getElementById("isbn");
