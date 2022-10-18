@@ -1,5 +1,6 @@
 const  booksTable = document.querySelector('table')
 const form  = document.querySelector('form')
+
 booksTable.addEventListener('click', deleteBook)
 form.addEventListener('submit', addBooks)
 
