@@ -1,7 +1,7 @@
+const  booksTable = document.querySelector('table')
 const form  = document.querySelector('form')
+booksTable.addEventListener('click', deleteBook)
 form.addEventListener('submit', addBooks)
-
-const booksTable = document.querySelector('table')
 
 function addBooks () {
     var table = document.getElementById("bookTable");
@@ -20,9 +20,17 @@ function addBooks () {
     cell1.innerText = input1.value;
     cell2.innerText = input2.value;
     cell3.innerText = input3.value;
-    cell4.innerHTML = '<a href="#" id="del">X</a>'
+    cell4.innerHTML = '<a href="#" id="delete">X</a>'
     // Clear the input fields
     input1.value = ''
     input2.value = ''
     input3.value = ''
+}
+
+function deleteBook(e){
+    if(e.target.textContent == 'X'){
+        if(confirm('Are you sure you want to delete this book?')){
+            e.target.parentElement.parentElement.remove()
+        }
+    }
 }
