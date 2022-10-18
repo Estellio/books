@@ -24,6 +24,7 @@ function addBooks () {
     cell4.innerHTML = '<a href="#" id="delete">X</a>'
     // Clear the input fields
     input1.value = ''
+
     input2.value = ''
     input3.value = ''
 }
