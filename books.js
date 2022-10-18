@@ -5,7 +5,7 @@ form.addEventListener('submit', addBooks)
 
 function addBooks () {
     var table = document.getElementById("bookTable");
-    // Create an empty <tr> element and add it to the last position of the table
+    // Create an empty <tr> element and add it to the end of the table
     var row = table.insertRow(-1);
     // Insert new cells (<td> elements) of the "new" <tr> element
     var cell1 = row.insertCell(0);
