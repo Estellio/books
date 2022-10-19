@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', getBooks)
 const booksTable = document.querySelector('table')
 const form = document.querySelector('form')
 
-
 booksTable.addEventListener('click', deleteBook)
 form.addEventListener('submit', addBooks)
 
@@ -23,7 +22,7 @@ function addBooks () {
     cell1.innerText = input1.value;
     cell2.innerText = input2.value;
     cell3.innerText = input3.value;
-    cell4.innerHTML = '<a href="#" id="delete">X</a>'
+    cell4.innerHTML = '<a href="#">X</a>'
     addBookToLS([input1.value, input2.value, input3.value])
     // Clear the input fields
     input1.value = ''
