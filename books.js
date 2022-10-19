@@ -23,7 +23,7 @@ function addBooks () {
     cell2.innerText = input2.value;
     cell3.innerText = input3.value;
     cell4.innerHTML = '<a href="#" id="delete">X</a>'
-    //addBookToLS([input1.value, input2.value, input3.value])
+    addBookToLS([input1.value, input2.value, input3.value])
     // Clear the input fields
     input1.value = ''
     input2.value = ''
