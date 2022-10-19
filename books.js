@@ -1,5 +1,6 @@
-const  booksTable = document.querySelector('table')
-const form  = document.querySelector('form')
+const booksTable = document.querySelector('table')
+const form = document.querySelector('form')
+
 
 booksTable.addEventListener('click', deleteBook)
 form.addEventListener('submit', addBooks)
@@ -22,6 +23,7 @@ function addBooks () {
     cell2.innerText = input2.value;
     cell3.innerText = input3.value;
     cell4.innerHTML = '<a href="#" id="delete">X</a>'
+    //addBookToLS([input1.value, input2.value, input3.value])
     // Clear the input fields
     input1.value = ''
     input2.value = ''
@@ -34,4 +36,15 @@ function deleteBook(e){
             e.target.parentElement.parentElement.remove()
         }
     }
+}
+
+function addBookToLS (book) {
+    let books
+    if(localStorage.getItem('books') === null){
+        books = []
+    } else {
+        books = JSON.parse(localStorage.getItem('books'))
+    }
+    books.push(book)
+    localStorage.setItem('books', JSON.stringify(books))
 }
