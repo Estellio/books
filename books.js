@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', getBooks)
 const booksTable = document.querySelector('table')
 const form = document.querySelector('form')
 
@@ -63,4 +64,30 @@ function deleteBookLS(book) {
         }
     })
     localStorage.setItem('books', JSON.stringify(books))
+}
+
+function getBooks(){
+    let books
+    if(localStorage.getItem('books') === null){
+        books = []
+    } else {
+        books = JSON.parse(localStorage.getItem('books'))
+    }
+    books.forEach((book) => {
+        const tr = document.createElement('tr')
+        const td1 = document.createElement('td')
+        const td2 = document.createElement('td')
+        const td3 = document.createElement('td')
+        const td4 = document.createElement('td')
+        const a = document.createElement('a')
+        a.appendChild(document.createTextNode('X'))
+        a.setAttribute('href', '#')
+        td1.appendChild(document.createTextNode(book[0]))
+        td2.appendChild(document.createTextNode(book[1]))
+        td3.appendChild(document.createTextNode(book[2]))
+        td4.appendChild(a)
+        tr.append(td1, td2, td3, td4)
+        const tbody = document.querySelector('tbody')
+        tbody.append(tr)
+    })
 }
